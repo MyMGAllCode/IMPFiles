@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+<hibernate-mapping>
+    <class name="com.nt.domain.EmpDetails" table="Employee" >
+
+	<id name="no" column="EID" />
+	
+	<property name="fname">
+		<column name="FIRSTNAME" />
+	</property>
+	<property name="lname">
+		<column name="LASTNAME" />
+	</property>
+	<property name="mail">
+		<column name="EMAIL" />
+	</property>
+	
+
+	
+</class> 
+	<query name="COPY_EMP_TO_NGO">
+
+<![CDATA[
+
+insert into  NGOMember (nid,fname,lname,mail ) SELECT no, fname,lname,mail from EmpDetails where no>=:min and no<=:max
+
+]]>
+</query>
+	
+
+</hibernate-mapping>

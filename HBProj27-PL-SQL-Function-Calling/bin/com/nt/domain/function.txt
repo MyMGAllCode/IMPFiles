@@ -1,0 +1,7 @@
+create or replace function  FX_GET_EMPS_BY_RANGE(min in number ,max in number) return SYS_REFCURSOR
+as  details SYS_REFCURSOR; 
+BEGIN 
+open details for  select eid,firstname,lastname,email from employee  whrere eid>=min and eid<=max; return details;
+END;
+/
+
