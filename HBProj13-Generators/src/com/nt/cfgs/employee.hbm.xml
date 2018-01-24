@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+<hibernate-mapping>
+    <class name="com.nt.domain.EmpDetails" table="Employee" >
+<!-- <id name="no" column ="EID" >
+		<generator class="assigned"/>
+	</id> -->
+	
+	<!-- <id name="no" column ="EID" >
+		<generator class="increment"/>
+	</id>-->
+	<!--                 Identity is not working in Oracle  -->
+	<!--  <id name="no" column ="EID" >
+		<generator class="identity"/>
+	</id> --> 
+	 
+	<!-- 
+	Note:Enable hbm2ddl.auto property in cfg file to use Sequense 
+	<id name="no" column ="EID" >
+		<generator class="sequence">
+		<param name="sequence_name">EIDSequence</param>
+		
+		</generator>
+		</id> -->
+		
+		<id name="no" column ="EID" >
+		<generator class="native">
+		<param name="sequence_name">EIDSequence</param>
+		
+		</generator>
+		</id>
+		
+	<property name="fname">
+		<column name="FIRSTNAME" />
+	</property>
+	<property name="lname">
+		<column name="LASTNAME" />
+	</property>
+	<property name="mail">
+		<column name="EMAIL" />
+	</property>
+</class> 
+</hibernate-mapping>
