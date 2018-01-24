@@ -1,0 +1,17 @@
+<hibernate-mapping>
+    <class name="com.nt.domain.Marks" table="MarksSheet" >
+
+	<id name="sid">
+		<column name="SID" />
+	</id>
+	<property name="subm1">
+		<column name="SUB1" />
+	</property>
+	<property name="subm2">
+		<column name="SUB2" />
+	</property>
+	<property name="subm3">
+		<column name="SUB3" />
+	</property>
+</class> 
+</hibernate-mapping>
