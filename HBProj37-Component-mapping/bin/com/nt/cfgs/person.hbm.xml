@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.nt.domain.Person" table="PERSON">
+		<id name="pid" />
+		<property name="pname" />
+		<component name="pjob" class="com.nt.domain.JobType">
+
+			<property name="job" />
+			<property name="department" />
+			<property name="salary" />
+		</component>
+
+	</class>
+
+</hibernate-mapping>

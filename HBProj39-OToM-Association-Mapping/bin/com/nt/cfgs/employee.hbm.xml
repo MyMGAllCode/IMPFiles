@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+<hibernate-mapping>
+    <class name="com.nt.domain.EmpDetails" table="Employee" >
+
+	<id name="no" column="EID" />
+	
+	<property name="fname">
+		<column name="FIRSTNAME" />
+	</property>
+	<property name="lname">
+		<column name="LASTNAME" />
+	</property>
+	<property name="mail">
+		<column name="EMAIL" />
+	</property>
+	</class> 
+	<sql-query name="GET_EMP_DETAILS_RANGE">
+	<return class="com.nt.domain.EmpDetails"/>
+<![CDATA[
+select * from employee where eid>:min and eid<:max
+
+]]>
+
+</sql-query>
+	
+		<sql-query name="GET_EMPS_COUNT">
+	<return-scalar  column="count(*)"  type="int"/>
+<![CDATA[
+select  count(*) from employee 
+
+]]>
+
+</sql-query>
+	
+	
+
+</hibernate-mapping>
