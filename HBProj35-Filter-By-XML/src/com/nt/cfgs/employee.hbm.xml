@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+<hibernate-mapping>
+    <class name="com.nt.domain.EmpDetails" table="Employee" >
+
+	<id name="no" column="EID" />
+	
+	<property name="fname">
+		<column name="FIRSTNAME" />
+	</property>
+	<property name="lname">
+		<column name="LASTNAME" />
+	</property>
+	<property name="mail">
+		<column name="EMAIL" />
+	</property>
+	<filter name="FILTER_BY_RANGE" condition="EID>=:min and EID &lt; = :max"></filter>
+	</class> 
+	
+	<filter-def name="FILTER_BY_RANGE">
+	<filter-param name="min" type="int"/>
+	<filter-param name="max" type="int"/>
+	</filter-def>
+
+</hibernate-mapping>
