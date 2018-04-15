@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: BootRestTest
+Implementation-Version: 1.0
+Built-By: DKP
+Implementation-Vendor-Id: com.test
+Build-Jdk: 1.8.0_73
+Implementation-URL: http://projects.spring.io/spring-boot/BootRestTest
+ /
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+
